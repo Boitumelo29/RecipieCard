@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple Recipe Card</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  .recipe-card {
+    max-width: 400px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  .recipe-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .recipe-card .recipe-details {
+    padding: 20px;
+    background-color: #f9f9f9;
+  }
+  .recipe-card .recipe-details h2 {
+    margin-top: 0;
+  }
+  .recipe-card .recipe-details ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  .recipe-card .recipe-details button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<div class="recipe-card">
+  <img src="https://via.placeholder.com/400x200" alt="Recipe Image">
+  <div class="recipe-details">
+    <h2>Spaghetti Carbonara</h2>
+    <ul id="ingredients-list">
+      <li>200g spaghetti</li>
+      <li>100g pancetta</li>
+      <li>2 eggs</li>
+      <li>50g grated Parmesan cheese</li>
+      <li>2 cloves garlic</li>
+      <li>Salt and pepper to taste</li>
+    </ul>
+    <button id="toggle-instructions">Show Instructions</button>
+    <p id="instructions" style="display: none;">
+      1. Cook spaghetti in boiling water according to package instructions.<br>
+      2. In a separate pan, cook pancetta until crispy. Remove excess fat.<br>
+      3. In a bowl, whisk together eggs, grated Parmesan, minced garlic, salt, and pepper.<br>
+      4. Drain spaghetti and add to the pan with pancetta. Mix well.<br>
+      5. Remove pan from heat and quickly stir in egg mixture until well combined.<br>
+      6. Serve immediately with extra Parmesan on top.<br>
+    </p>
+  </div>
+</div>
+
+<script>
+  const toggleButton = document.getElementById('toggle-instructions');
+  const instructions = document.getElementById('instructions');
+
+  toggleButton.addEventListener('click', function() {
+    if (instructions.style.display === 'none') {
+      instructions.style.display = 'block';
+      toggleButton.textContent = 'Hide Instructions';
+    } else {
+      instructions.style.display = 'none';
+      toggleButton.textContent = 'Show Instructions';
+    }
+  });
+</script>
+
+</body>
+</html>
